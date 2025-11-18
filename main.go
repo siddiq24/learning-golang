@@ -5,17 +5,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 )
 
-const (
+var (
 	host     = "learning-postgres" // Use the container name
 	port     = 5432                // Use the container's internal port
-	user     = "postgres"
-	password = "mysecretpassword"
-	dbname   = "learningdb"
+	user     = os.Getenv("POSTGRES_USER")
+	password = os.Getenv("POSTGRES_PASSWORD")
+	dbname   = os.Getenv("POSTGRES_DB")
 )
 
 var db *sql.DB
