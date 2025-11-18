@@ -43,7 +43,7 @@ func main() {
 	r := gin.Default()
 
 	// Load HTML templates
-	r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob("api/templates/*")
 
 	// Define routes
 	r.GET("/", func(c *gin.Context) {
