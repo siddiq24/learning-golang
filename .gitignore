@@ -6,3 +6,4 @@ pkg/
 
 # Ignore environment files
 .env
+.vercel
